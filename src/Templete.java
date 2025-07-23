@@ -19,6 +19,10 @@ public class Templete {
         int [] array = new int[N];
         for(int i = 0; i < N; i++)array[i] = Integer.parseInt(st.nextToken());
 
+        // 간단히 입력받을 때 (공백 기준)
+        Scanner sc = new Scanner(System.in);
+        sc.nextInt(); // 숫자 입력
+
         // 하나 출력
         System.out.print("혜령이는 귀여워");
 
