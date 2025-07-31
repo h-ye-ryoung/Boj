@@ -18,7 +18,7 @@ public class Main {
             time[i] = Integer.parseInt(st.nextToken());
         }
 
-        // 인출 시간이 최소가 되게 정렬
+        // 인출 시간이 최소가 되게 정렬1
         Arrays.sort(time);
 
         // 구간합으로 각 사람이 걸리는 시간 구하기
