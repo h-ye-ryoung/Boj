@@ -38,10 +38,7 @@ public class Main {
         if(depth == passwordLength) {
             //최소 한개의 모음(aeiou)과 최소 두개의 자음이 보장될 때만 출력
             if (check()) {
-                for (int i = 0; i < passwordLength; i++) {
-                    System.out.print(resultArray[i]);
-                }
-                System.out.println();
+                printArray();
                 return;
             } else {
                 return;
@@ -51,15 +48,12 @@ public class Main {
         // 정답이 아니라면, 가능한 모든 문자를 순회
         // 이때 사전식으로 출력해야 하므로 (역순x), 인자로 받은 index부터 순회돌기 시작
         for (int i = index; i < length; i++) {
-            //if () {
-                resultArray[depth] = array[i]; // 정답 배열의 현재 depth번째 칸에, array의 (지금 순회도는 배열) i번째 인덱스의 문자 저장
-                backTracking(depth+1, i+1); // 다음 재귀호출
-            //}
+            resultArray[depth] = array[i]; // 정답 배열의 현재 depth번째 칸에, array의 (지금 순회도는 배열) i번째 인덱스의 문자 저장
+            backTracking(depth+1, i+1); // 다음 재귀호출
         }
     }
 
-
-    // 모음 최소 1개, 자음 최소 2개일 경우 true
+    // 모음 최소 1개, 자음 최소 2개일 경우 true를 반환하는 함수
     private static boolean check() {
         int aeio = 0; // 모음 개수
         int w = 0; // 자음 개수
@@ -79,5 +73,12 @@ public class Main {
         }
         if (aeio >= 1 && w >=2 ) return true;
         else return false;
+    }
+
+    private static void printArray() {
+        for (int i = 0; i < passwordLength; i++) {
+            System.out.print(resultArray[i]);
+        }
+        System.out.println();
     }
 }
