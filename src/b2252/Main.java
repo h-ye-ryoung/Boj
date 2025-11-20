@@ -38,13 +38,13 @@ public class Main {
         // 정렬 배열 초기화
         ArrayList<Integer> result = new ArrayList<>();
 
-        for (int i = 0; i < N; i++) {
-            for(int j = 1; j < N+1; j++) {
+        for (int i = 0; i < N; i++) { //N번 반복 (N개 정렬)
+            for(int j = 1; j < N+1; j++) { //노드 1~N까지 순회하며 진입차수가 0인 노드 찾기
                 if(V[j] == 0) {
-                    result.add(j);
-                    for(int k : array[j]) V[k]--;
-                    V[j] = -1;
-                    break;
+                    result.add(j); //먼저 줄세우기
+                    for(int k : array[j]) V[k]--; //해당 노드에 연결된 노드들의 진입차수 -1
+                    V[j] = -1; //또다시 탐지되지 않도록, 이미 줄세운 노드 -1로 바꾸기
+                    break; //순회 끝
                 }
             }
         }
