@@ -17,21 +17,21 @@ public class Main {
         int N = Integer.parseInt(st.nextToken());
         int M = Integer.parseInt(st.nextToken());
 
-        ArrayList<String> array = new ArrayList<>();
-        Set<String> set = new HashSet<>();
+        Set<String> set1 = new HashSet<>();
+        Set<String> set2 = new HashSet<>();
         ArrayList<String> result = new ArrayList<>();
 
         for (int i = 0; i < N; i++) { //듣도 못한
-            array.add(br.readLine());
+            set1.add(br.readLine());
         }
         for (int i = 0; i < M; i++) { //보도 못한
-            set.add(br.readLine());
+            set2.add(br.readLine());
         }
 
         StringBuilder sb = new StringBuilder();
         int count = 0;
-        for (String string : array) {
-            if (set.contains(string)) {
+        for (String string : set1) {
+            if (set2.contains(string)) {
                 result.add(string);
                 count++;
             }
